@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "obione-server-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "obione-server",
+          "database_id": "ce29263e-aae1-4dc3-b6a7-404780efff97"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "3d88f002d0844603aedf72a3bb84ae17",
+            "binding": "SECRET",
+            "secret_name": "obione-server"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
